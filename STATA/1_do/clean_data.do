@@ -171,9 +171,9 @@ rename primary_approval1 primary_form
 rename primary_approval2 primary_date
 replace secondary_form = subinstr(secondary_form,"updated","",.)
 replace secondary_form = subinstr(secondary_form,";","",.)
-drop F*
+drop F* primary_approval
 foreach v of varlist *_form *_date {
 	replace `v' = ustrtrim(`v')
 }
 save "${data}\companion_pairs", replace
-
+export delimited "data\companion_pairs.csv", replace
