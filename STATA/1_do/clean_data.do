@@ -176,4 +176,4 @@ foreach v of varlist *_form *_date {
 	replace `v' = ustrtrim(`v')
 }
 save "${data}\companion_pairs", replace
-export delimited "data\companion_pairs.csv", replace
+export delimited "${data}\companion_pairs.csv", replace
