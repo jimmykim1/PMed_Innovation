@@ -174,6 +174,7 @@ replace secondary_form = subinstr(secondary_form,";","",.)
 drop F* primary_approval
 foreach v of varlist *_form *_date {
 	replace `v' = ustrtrim(`v')
+	replace `v' = stritrim(`v')
 }
 save "${data}\companion_pairs", replace
 export delimited "${data}\companion_pairs.csv", replace
